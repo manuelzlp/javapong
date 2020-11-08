@@ -9,7 +9,7 @@ public class Drawing extends JPanel {
      public void paintComponent(Graphics g) {
 
          // Reset screen
-         g.setColor(new Color(0, 102, 204));
+         g.setColor(new Color(15, 15, 15));
          g.fillRect(0, 0, Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT);
 
          // paint squares
@@ -18,11 +18,19 @@ public class Drawing extends JPanel {
              g.setColor(c.color);                
              g.fillRect(c.x, c.y, c.width, c.height);
          });
+         
+         // paint circles
+         G.circles.forEach((c) -> {
+            // Inside
+            g.setColor(c.color);                
+            g.fillOval(c.x, c.y, c.width, c.height);
+         });
 
+         // Paint texts
          G.texts.forEach((e) -> {
 
              g.setColor(e.color);
-             Font f = new Font("Arial", Font.PLAIN, e.size);
+             Font f = new Font("Trebuchet MS", Font.PLAIN, e.size);
              g.setFont(f);
 
              int drawX = e.x;

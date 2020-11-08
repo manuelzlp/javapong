@@ -35,6 +35,7 @@ public class Window extends JFrame implements KeyListener {
         this.g = new Drawing();
         this.setBounds(new Rectangle(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
         this.setResizable(false);
+        this.setUndecorated(true);
         this.setLocationRelativeTo(null);        
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         addKeyListener(this);
